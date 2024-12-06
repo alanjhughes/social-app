@@ -74,6 +74,11 @@ import {BottomSheetProvider} from '../modules/bottom-sheet'
 import {BackgroundNotificationPreferencesProvider} from '../modules/expo-background-notification-handler/src/BackgroundNotificationHandlerProvider'
 
 SplashScreen.preventAutoHideAsync()
+
+SplashScreen.setOptions({
+  fade: false,
+  duration: 0,
+})
 if (isIOS) {
   SystemUI.setBackgroundColorAsync('black')
 }

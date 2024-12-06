@@ -1,0 +1,22 @@
+diff --git a/node_modules/@expo/prebuild-config/build/plugins/unversioned/expo-splash-screen/withAndroidSplashImages.js b/node_modules/@expo/prebuild-config/build/plugins/unversioned/expo-splash-screen/withAndroidSplashImages.js
+index fa5367b..f3a83ce 100644
+--- a/node_modules/@expo/prebuild-config/build/plugins/unversioned/expo-splash-screen/withAndroidSplashImages.js
++++ b/node_modules/@expo/prebuild-config/build/plugins/unversioned/expo-splash-screen/withAndroidSplashImages.js
+@@ -154,17 +154,6 @@ async function setSplashImageDrawablesForThemeAsync(config, theme, projectRoot,
+     // @ts-ignore
+     const image = config[imageKey];
+     if (image) {
+-      if (config.enableFullScreenImage_legacy) {
+-        const {
+-          source
+-        } = await (0, _imageUtils().generateImageAsync)({
+-          projectRoot,
+-          cacheType: IMAGE_CACHE_NAME
+-        }, {
+-          src: image
+-        });
+-        return writeDrawable(projectRoot, imageKey, theme, source);
+-      }
+       const multiplier = DRAWABLES_CONFIGS[imageKey].dimensionsMultiplier;
+       const size = imageWidth * multiplier; // "imageWidth" must be replaced by the logo width chosen by the user in its config file
+       const canvasSize = 288 * multiplier;
